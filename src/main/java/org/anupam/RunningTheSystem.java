@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class RunningTheSystem {
     public boolean shouldRun;
-    public static void runTheSystem(ArrayList studentDetai){
+    public static void runTheSystem(ArrayList<Student> studentDetai){
         boolean pressedWrongedNumber = false;
         boolean shouldRun = true;
         int pressedNumber = 0;
@@ -22,6 +22,7 @@ public class RunningTheSystem {
             while(!(isnumbercorrect)) {
                 try {
                     pressedNumber = input.nextInt();
+                    input.nextLine();
                 } catch (Exception exception) {
                     System.out.println("This number is unfortunatly wrong please try Again!!!!");
                     input.nextLine();
@@ -31,7 +32,7 @@ public class RunningTheSystem {
             }
 
             if(isnumbercorrect){
-                Question.casesToPerform(pressedNumber , studentDetai, runTheSystem);
+                Question.casesToPerform(pressedNumber , studentDetai, runTheSystem , input);
             }
             continue;
         }
